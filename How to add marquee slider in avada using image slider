@@ -1,0 +1,244 @@
+How to add marquee slider in avada using image slider.
+First add container woth full width
+Then add image carosul and turn off auto play slider in setting
+Then add image
+
+Then go to avada option > custom css> 
+Paste this css into section
+.custom-marquee-slider {
+    overflow: hidden;
+    position: relative;
+}
+
+.custom-marquee-slider .fusion-carousel-item-wrapper {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+
+.custom-marquee-slider .fusion-carousel-item-wrapper .fusion-carousel-item {
+    display: inline-block;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+Then paste this css id name into fusion-carousel-item-wrapper and saved it working now.
+
+But if you want to add shodow in left and right side in avada slider then add or paste this css in avada custom css section.
+.custom-marquee-slider {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+.custom-marquee-slider .fusion-carousel-item-wrapper {
+    display: inline-flex; /* Ensures items are displayed inline */
+    white-space: nowrap; /* Prevents wrapping */
+    animation: marquee 20s linear infinite; /* Marquee animation */
+}
+
+.custom-marquee-slider .fusion-carousel-item {
+    display: inline-block; /* Ensures items are displayed inline */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Shadow Effect */
+.custom-marquee-slider::before,
+.custom-marquee-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 130px; /* Increased width of the shadow */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.custom-marquee-slider::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.75), transparent); /* Increased opacity */
+}
+
+.custom-marquee-slider::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.75), transparent); /* Increased opacity */
+}  
+
+If you want to move slider left section and second move on to right then paste this css into aavada custom css aand update the css class in first columan add custom-marquee-slider-and second custom-marquee-slider-right.. here is the css 
+/* Common CSS for both sliders */
+.custom-marquee-slider {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Slider moving to the left */
+.custom-marquee-slider-left .fusion-carousel-item-wrapper {
+    display: inline-flex; /* Ensure items are displayed inline */
+    white-space: nowrap; /* Prevent wrapping */
+    animation: marquee-left 20s linear infinite; /* Marquee animation */
+}
+
+.custom-marquee-slider-left .fusion-carousel-item {
+    display: inline-block; /* Ensure items are displayed inline */
+}
+
+/* Slider moving to the right */
+.custom-marquee-slider-right .fusion-carousel-item-wrapper {
+    display: inline-flex; /* Ensure items are displayed inline */
+    white-space: nowrap; /* Prevent wrapping */
+    animation: marquee-right 20s linear infinite; /* Marquee animation */
+}
+
+.custom-marquee-slider-right .fusion-carousel-item {
+    display: inline-block; /* Ensure items are displayed inline */
+}
+
+/* Keyframes for left-moving marquee */
+@keyframes marquee-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Keyframes for right-moving marquee */
+@keyframes marquee-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Shadow Effect */
+.custom-marquee-slider-left::before,
+.custom-marquee-slider-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 40px; /* Width of the shadow */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.custom-marquee-slider-left::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.75), transparent); /* Shadow on the left */
+}
+
+.custom-marquee-slider-right::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.75), transparent); /* Shadow on the right */
+}
+
+
+
+Here is a complete css .custom-marquee-slider {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+.custom-marquee-slider .fusion-carousel-item-wrapper {
+    display: inline-flex; /* Ensures items are displayed inline */
+    white-space: nowrap; /* Prevents wrapping */
+    animation: marquee 20s linear infinite; /* Marquee animation */
+}
+
+.custom-marquee-slider .fusion-carousel-item {
+    display: inline-block; /* Ensures items are displayed inline */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Shadow Effect */
+.custom-marquee-slider::before,
+.custom-marquee-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 130px; /* Increased width of the shadow */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.custom-marquee-slider::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.75), transparent); /* Increased opacity */
+}
+
+.custom-marquee-slider::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.75), transparent); /* Increased opacity */
+}
+
+/*left to right */
+/* Common CSS for both sliders */
+.custom-marquee-slider {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Slider moving to the left */
+.custom-marquee-slider-left .fusion-carousel-item-wrapper {
+    display: inline-flex; /* Ensure items are displayed inline */
+    white-space: nowrap; /* Prevent wrapping */
+    animation: marquee-left 20s linear infinite; /* Marquee animation */
+}
+
+.custom-marquee-slider-left .fusion-carousel-item {
+    display: inline-block; /* Ensure items are displayed inline */
+}
+
+/* Slider moving to the right */
+.custom-marquee-slider-right .fusion-carousel-item-wrapper {
+    display: inline-flex; /* Ensure items are displayed inline */
+    white-space: nowrap; /* Prevent wrapping */
+    animation: marquee-right 20s linear infinite; /* Marquee animation */
+}
+
+.custom-marquee-slider-right .fusion-carousel-item {
+    display: inline-block; /* Ensure items are displayed inline */
+}
+
+/* Keyframes for left-moving marquee */
+@keyframes marquee-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Keyframes for right-moving marquee */
+@keyframes marquee-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Shadow Effect */
+.custom-marquee-slider-left::before,
+.custom-marquee-slider-right::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 40px; /* Width of the shadow */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.custom-marquee-slider-left::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.75), transparent); /* Shadow on the left */
+}
+
+.custom-marquee-slider-right::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.75), transparent); /* Shadow on the right */
+}
